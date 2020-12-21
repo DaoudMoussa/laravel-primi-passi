@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $name = getRandomName();
-    return view('homepage', ['name' => $name]);
-});
+    $data = [
+        'name' => getRandomName()
+    ];
+
+    return view('homepage', $data);
+})->name('homepage');
 
 
 function getRandomName() {
